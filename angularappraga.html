@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Material Design - Responsive card</title>
+
+
+    <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css'>
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/3d.css">
+
+
+
+</head>
+
+<body>
+    <section ng-app="Ragas" ng-cloak ng-controller="RagasCtrl" class="container">
+        <div class="page-header">
+            <h1>Raga Seer<br>
+          <small>Explore the Ragas</small></h1>
+            <input type="text" name="ragas" ng-model="ragaName" required>
+
+            <button type="button" class="btn btn-success btn-lg" ng-click="findRaga(ragaName)">Find the Raga</button>
+
+
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12" ng-repeat="x in ragas">
+            <a name="{{x.Name}}">
+                <article class="material-card {{x.Color}}">
+                    <h2>
+                    <span>{{x.Name}}</span>
+                    <strong>
+                    <i class="fa fa-fw fa-star"></i>
+                        {{x.Name}}
+                    </strong>
+                </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="images/{{x.Name}}.jpg">
+                        </div>
+                        <div class="mc-description">
+                            {{x.Description}}
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                        More Info
+                    </h4>
+                        <a class="fa fa-fw fa-certificate" href="{{x.Name}}.html"></a>
+                    </div>
+                </article>
+        </div>
+    </section>
+
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        
+
+    <script src="js/index.js"></script>
+        <script src="js/raga.js"></script>
+
+</body>
+
+</html>
